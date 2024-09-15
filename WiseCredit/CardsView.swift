@@ -85,12 +85,13 @@ struct CardsView: View {
                                             .foregroundColor(.gray)
                                             .font(CustomFonts.PoppinsMedium(size: 14))
                                     }
-                                    .padding()
+                                    .padding(20) // Ajuste para que los textos estén correctamente alineados dentro de la tarjeta
                                 }
                             }
                         }
                         .padding(.horizontal)
                     }
+                    .frame(height: 160) // Ajusta el tamaño de la vista de las tarjetas para que tengan el tamaño correcto
 
                     // Configuración de la tarjeta
                     VStack(alignment: .leading, spacing: 16) {
