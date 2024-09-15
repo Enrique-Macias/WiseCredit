@@ -43,6 +43,7 @@
 		ECC5AABF2C96E5F100A918FE /* MultiturnChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AABE2C96E5F100A918FE /* MultiturnChatView.swift */; };
 		ECC5AAC12C96E61000A918FE /* OnboardingChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAC02C96E61000A918FE /* OnboardingChatBotView.swift */; };
 		ECC5AAC42C96E68400A918FE /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = ECC5AAC32C96E68400A918FE /* GoogleGenerativeAI */; };
+		ECC5AAC62C96F75700A918FE /* GenerativeAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECC5AAC52C96F75700A918FE /* GenerativeAI-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -76,6 +77,7 @@
 		ECC5AABC2C96E5D400A918FE /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadView.swift; path = WiseCredit/LoadView.swift; sourceTree = SOURCE_ROOT; };
 		ECC5AABE2C96E5F100A918FE /* MultiturnChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultiturnChatView.swift; path = WiseCredit/MultiturnChatView.swift; sourceTree = SOURCE_ROOT; };
 		ECC5AAC02C96E61000A918FE /* OnboardingChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingChatBotView.swift; path = WiseCredit/OnboardingChatBotView.swift; sourceTree = SOURCE_ROOT; };
+		ECC5AAC52C96F75700A918FE /* GenerativeAI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GenerativeAI-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -122,9 +124,16 @@
 				ECC5AA6F2C963DC900A918FE /* ContentView.swift */,
 				ECC5AA812C964A3D00A918FE /* ProfileView.swift */,
 				ECC5AAA92C96A6AB00A918FE /* AuthViewModel.swift */,
+				ECC5AAC52C96F75700A918FE /* GenerativeAI-Info.plist */,
 				ECC5AAAB2C96C7D000A918FE /* CreditSimulationView.swift */,
+				ECC5AAB42C96E58F00A918FE /* APIKey.swift */,
+				ECC5AAB62C96E59F00A918FE /* ChatBot.swift */,
+				ECC5AAB82C96E5B200A918FE /* ChatBubble.swift */,
+				ECC5AABA2C96E5C000A918FE /* ChatBubbleShape.swift */,
+				ECC5AABC2C96E5D400A918FE /* LoadView.swift */,
+				ECC5AABE2C96E5F100A918FE /* MultiturnChatView.swift */,
+				ECC5AAC02C96E61000A918FE /* OnboardingChatBotView.swift */,
 				ECC5AA7B2C96442900A918FE /* CustomTabBar.swift */,
-				ECC5AAB32C96E51C00A918FE /* New Group */,
 				ECC5AAAD2C96D05600A918FE /* CalculationView.swift */,
 				ECC5AA912C966F6E00A918FE /* LoginViews */,
 				ECC5AA7D2C9646B000A918FE /* HomeView.swift */,
@@ -165,20 +174,6 @@
 				ECC5AA942C966FD900A918FE /* RegisterView.swift */,
 			);
 			path = LoginViews;
-			sourceTree = "<group>";
-		};
-		ECC5AAB32C96E51C00A918FE /* New Group */ = {
-			isa = PBXGroup;
-			children = (
-				ECC5AAB42C96E58F00A918FE /* APIKey.swift */,
-				ECC5AAB62C96E59F00A918FE /* ChatBot.swift */,
-				ECC5AAB82C96E5B200A918FE /* ChatBubble.swift */,
-				ECC5AABA2C96E5C000A918FE /* ChatBubbleShape.swift */,
-				ECC5AABC2C96E5D400A918FE /* LoadView.swift */,
-				ECC5AABE2C96E5F100A918FE /* MultiturnChatView.swift */,
-				ECC5AAC02C96E61000A918FE /* OnboardingChatBotView.swift */,
-			);
-			path = "New Group";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -258,6 +253,7 @@
 				ECC5AA8D2C96599600A918FE /* Poppins-Medium.ttf in Resources */,
 				ECC5AA752C963DCD00A918FE /* Preview Assets.xcassets in Resources */,
 				ECC5AA852C96597A00A918FE /* Poppins-Bold.ttf in Resources */,
+				ECC5AAC62C96F75700A918FE /* GenerativeAI-Info.plist in Resources */,
 				ECC5AA8C2C96599600A918FE /* Poppins-SemiBold.ttf in Resources */,
 				ECC5AA722C963DCD00A918FE /* Assets.xcassets in Resources */,
 				ECC5AA8B2C96599600A918FE /* Poppins-Regular.ttf in Resources */,

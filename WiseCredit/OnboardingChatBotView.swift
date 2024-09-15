@@ -8,11 +8,68 @@
 import SwiftUI
 
 struct OnboardingChatBotView: View {
+    var onContinue: () -> Void // Closure que se ejecuta cuando el usuario hace clic en "Continuar"
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
-    }
-}
+        ZStack {
+            // Color de fondo azul
+            Color("BackgroundColor")
+                .edgesIgnoringSafeArea(.all)
+            
+            VStack {
+                Spacer()
+                
+                // Título principal
+                Text("Asistente Financiero")
+                    .font(.system(size: 24, weight: .black))
+                    .foregroundColor(.white)
+                    .frame(width: 410, height: 31)
+                    .padding()
 
-#Preview {
-    OnboardingChatBotView()
+                // Subtítulo
+                Text("Acude a nuestro chat de asesoría para resolver dudas sobre procesos financieros")
+                    .font(.system(size: 16))
+                    .foregroundColor(.white)
+                    .multilineTextAlignment(.center)
+                    .padding(.horizontal, 40)
+                    .padding(.top, 8)
+
+                Spacer()
+
+                // Imagen del Chatbot
+                Image("Onboarding-ChatBot")
+                    .resizable()
+                    .scaledToFit()
+                    .frame(height: 300)
+                    .foregroundStyle(Color.black)
+                    .padding(.bottom, 40)
+                
+                Spacer()
+
+                // Botón Continuar
+                Button(action: onContinue) {
+                    ZStack {
+                        Text("Continuar")
+                            .fontWeight(.bold)
+                            .font(.system(size: 18))
+                            .foregroundColor(Color("BackgroundColor"))
+                        HStack {
+                            Spacer()
+                            Image(systemName: "arrow.right")
+                                .font(.system(size: 18))
+                                .foregroundStyle(Color("BackgroundColor"))
+                        }
+                        .padding(.trailing, 16)
+                    }
+                    .padding()
+                    .frame(maxWidth: .infinity)
+                    .frame(width: 330, height: 55)
+                    .background(Color.white)
+                    .foregroundColor(Color.black)
+                    .cornerRadius(15)
+                    .padding(.horizontal, 40)
+                }
+                .padding(.bottom, 40)
+            }
+        }
+    }
 }

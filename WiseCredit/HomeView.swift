@@ -19,6 +19,16 @@ struct HomeView: View {
     @State private var selectedTimeRange: TimeRange = .oneYear // Valor por defecto para el rango de tiempo seleccionado
     @State private var isCreditSimulatorPresented = false  // Estado para mostrar la CreditSimulationView
     @State private var isChatBotPresented = false  // Estado para mostrar ChatBotView
+    
+    // ChatBot
+        @State private var currentView: ChatBotState = .main
+        @AppStorage("hasSeenChatbotOnboarding") private var hasSeenChatbotOnboarding = false
+        @State private var showingChatbotViews = false
+        
+        // Control Views of ChatBot
+        enum ChatBotState {
+            case main, load, onboarding, chat
+        }
 
     var body: some View {
         NavigationView {
@@ -103,11 +113,14 @@ struct HomeView: View {
                                         icon: "robot",
                                         isRed: true,
                                         action: {
-                                            isChatBotPresented = true
+                                            print("TAPPED CHTBOT BTN")
+                                            showingChatbotViews = true
+                                            currentView = .load
                                         }
                                     )
-                                    .fullScreenCover(isPresented: $isChatBotPresented) {
-                                        ChatBotView()
+                                    .fullScreenCover(isPresented: $showingChatbotViews) {
+                                        ChatBotFlowView(currentView: $currentView, hasSeenChatbotOnboarding: $hasSeenChatbotOnboarding)
+
                                     }
                                     
                                     BonusBoxButton(
@@ -178,6 +191,42 @@ struct HomeView: View {
                         }
                     }
                 }
+            }
+        }
+    }
+}
+
+// ChatBotFlowView: Esta vista maneja el flujo de vistas de carga, onboarding y el chat del ChatBot
+struct ChatBotFlowView: View {
+    @Binding var currentView: HomeView.ChatBotState
+    @Binding var hasSeenChatbotOnboarding: Bool
+
+    var body: some View {
+        ZStack {
+            if currentView == .load {
+                LoadView()
+                    .onAppear {
+                        print("Mostrando LoadView...")
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 3) {
+                            if hasSeenChatbotOnboarding {
+                                print("Mostrando ChatView...")
+                                currentView = .chat
+                            } else {
+                                print("Mostrando OnboardingChatBotView...")
+                                currentView = .onboarding
+                            }
+                        }
+                    }
+            } else if currentView == .onboarding {
+                OnboardingChatBotView(onContinue: {
+                    print("Onboarding completado. Mostrando ChatView.")
+                    hasSeenChatbotOnboarding = true
+                    currentView = .chat
+                })
+            } else if currentView == .chat {
+                MultiturnChatView()
+            } else {
+                Text("Error: No se pudo determinar la vista actual.")
             }
         }
     }

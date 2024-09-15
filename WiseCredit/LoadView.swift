@@ -8,8 +8,30 @@
 import SwiftUI
 
 struct LoadView: View {
+    @Environment(\.colorScheme) var colorScheme
+    
     var body: some View {
-        Text(/*@START_MENU_TOKEN@*/"Hello, World!"/*@END_MENU_TOKEN@*/)
+        
+        ZStack {
+            Color(colorScheme == .light ? Color.black : .white)
+                .edgesIgnoringSafeArea(.all)
+            Image("robot")
+                .foregroundColor(Color(colorScheme == .light ? .white : Color.white))
+                .frame(width: 10, height: 10)
+                .padding(.all, 20)
+            
+        }
+    }
+}
+
+struct LoadView_Previews: PreviewProvider {
+    static var previews: some View {
+        Group {
+            LoadView()
+                .preferredColorScheme(.light) // Modo claro
+            LoadView()
+                .preferredColorScheme(.dark)  // Modo oscuro
+        }
     }
 }
 
