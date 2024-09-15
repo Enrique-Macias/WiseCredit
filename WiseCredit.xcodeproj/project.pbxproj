@@ -35,6 +35,14 @@
 		ECC5AAAC2C96C7D000A918FE /* CreditSimulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAAB2C96C7D000A918FE /* CreditSimulationView.swift */; };
 		ECC5AAAE2C96D05600A918FE /* CalculationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAAD2C96D05600A918FE /* CalculationView.swift */; };
 		ECC5AAB02C96E1FE00A918FE /* ChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAAF2C96E1FE00A918FE /* ChatBotView.swift */; };
+		ECC5AAB52C96E59000A918FE /* APIKey.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAB42C96E58F00A918FE /* APIKey.swift */; };
+		ECC5AAB72C96E5A000A918FE /* ChatBot.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAB62C96E59F00A918FE /* ChatBot.swift */; };
+		ECC5AAB92C96E5B200A918FE /* ChatBubble.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAB82C96E5B200A918FE /* ChatBubble.swift */; };
+		ECC5AABB2C96E5C000A918FE /* ChatBubbleShape.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AABA2C96E5C000A918FE /* ChatBubbleShape.swift */; };
+		ECC5AABD2C96E5D400A918FE /* LoadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AABC2C96E5D400A918FE /* LoadView.swift */; };
+		ECC5AABF2C96E5F100A918FE /* MultiturnChatView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AABE2C96E5F100A918FE /* MultiturnChatView.swift */; };
+		ECC5AAC12C96E61000A918FE /* OnboardingChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAC02C96E61000A918FE /* OnboardingChatBotView.swift */; };
+		ECC5AAC42C96E68400A918FE /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = ECC5AAC32C96E68400A918FE /* GoogleGenerativeAI */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -61,6 +69,13 @@
 		ECC5AAAB2C96C7D000A918FE /* CreditSimulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditSimulationView.swift; sourceTree = "<group>"; };
 		ECC5AAAD2C96D05600A918FE /* CalculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationView.swift; sourceTree = "<group>"; };
 		ECC5AAAF2C96E1FE00A918FE /* ChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotView.swift; sourceTree = "<group>"; };
+		ECC5AAB42C96E58F00A918FE /* APIKey.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = APIKey.swift; path = WiseCredit/APIKey.swift; sourceTree = SOURCE_ROOT; };
+		ECC5AAB62C96E59F00A918FE /* ChatBot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatBot.swift; path = WiseCredit/ChatBot.swift; sourceTree = SOURCE_ROOT; };
+		ECC5AAB82C96E5B200A918FE /* ChatBubble.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatBubble.swift; path = WiseCredit/ChatBubble.swift; sourceTree = SOURCE_ROOT; };
+		ECC5AABA2C96E5C000A918FE /* ChatBubbleShape.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = ChatBubbleShape.swift; path = WiseCredit/ChatBubbleShape.swift; sourceTree = SOURCE_ROOT; };
+		ECC5AABC2C96E5D400A918FE /* LoadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = LoadView.swift; path = WiseCredit/LoadView.swift; sourceTree = SOURCE_ROOT; };
+		ECC5AABE2C96E5F100A918FE /* MultiturnChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultiturnChatView.swift; path = WiseCredit/MultiturnChatView.swift; sourceTree = SOURCE_ROOT; };
+		ECC5AAC02C96E61000A918FE /* OnboardingChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingChatBotView.swift; path = WiseCredit/OnboardingChatBotView.swift; sourceTree = SOURCE_ROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -71,6 +86,7 @@
 				ECC5AA9C2C967E5900A918FE /* FirebaseDatabase in Frameworks */,
 				ECC5AAA82C96813F00A918FE /* FirebaseStorageCombine-Community in Frameworks */,
 				ECC5AAA62C96813F00A918FE /* FirebaseAuthCombine-Community in Frameworks */,
+				ECC5AAC42C96E68400A918FE /* GoogleGenerativeAI in Frameworks */,
 				ECC5AAA02C967E5900A918FE /* FirebaseFirestoreCombine-Community in Frameworks */,
 				ECC5AA9A2C967E5900A918FE /* FirebaseAuth in Frameworks */,
 				ECC5AAA22C967E5900A918FE /* FirebaseStorage in Frameworks */,
@@ -108,6 +124,7 @@
 				ECC5AAA92C96A6AB00A918FE /* AuthViewModel.swift */,
 				ECC5AAAB2C96C7D000A918FE /* CreditSimulationView.swift */,
 				ECC5AA7B2C96442900A918FE /* CustomTabBar.swift */,
+				ECC5AAB32C96E51C00A918FE /* New Group */,
 				ECC5AAAD2C96D05600A918FE /* CalculationView.swift */,
 				ECC5AA912C966F6E00A918FE /* LoginViews */,
 				ECC5AA7D2C9646B000A918FE /* HomeView.swift */,
@@ -150,6 +167,20 @@
 			path = LoginViews;
 			sourceTree = "<group>";
 		};
+		ECC5AAB32C96E51C00A918FE /* New Group */ = {
+			isa = PBXGroup;
+			children = (
+				ECC5AAB42C96E58F00A918FE /* APIKey.swift */,
+				ECC5AAB62C96E59F00A918FE /* ChatBot.swift */,
+				ECC5AAB82C96E5B200A918FE /* ChatBubble.swift */,
+				ECC5AABA2C96E5C000A918FE /* ChatBubbleShape.swift */,
+				ECC5AABC2C96E5D400A918FE /* LoadView.swift */,
+				ECC5AABE2C96E5F100A918FE /* MultiturnChatView.swift */,
+				ECC5AAC02C96E61000A918FE /* OnboardingChatBotView.swift */,
+			);
+			path = "New Group";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -174,6 +205,7 @@
 				ECC5AAA12C967E5900A918FE /* FirebaseStorage */,
 				ECC5AAA52C96813F00A918FE /* FirebaseAuthCombine-Community */,
 				ECC5AAA72C96813F00A918FE /* FirebaseStorageCombine-Community */,
+				ECC5AAC32C96E68400A918FE /* GoogleGenerativeAI */,
 			);
 			productName = WiseCredit;
 			productReference = ECC5AA6A2C963DC900A918FE /* WiseCredit.app */;
@@ -205,6 +237,7 @@
 			mainGroup = ECC5AA612C963DC900A918FE;
 			packageReferences = (
 				ECC5AA982C967E5900A918FE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				ECC5AAC22C96E68400A918FE /* XCRemoteSwiftPackageReference "generative-ai-swift" */,
 			);
 			productRefGroup = ECC5AA6B2C963DC900A918FE /* Products */;
 			projectDirPath = "";
@@ -239,16 +272,23 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECC5AAAA2C96A6AC00A918FE /* AuthViewModel.swift in Sources */,
+				ECC5AABF2C96E5F100A918FE /* MultiturnChatView.swift in Sources */,
 				ECC5AAAC2C96C7D000A918FE /* CreditSimulationView.swift in Sources */,
 				ECC5AA952C966FD900A918FE /* RegisterView.swift in Sources */,
 				ECC5AA902C965A2000A918FE /* Fonts.swift in Sources */,
 				ECC5AA702C963DC900A918FE /* ContentView.swift in Sources */,
+				ECC5AAB72C96E5A000A918FE /* ChatBot.swift in Sources */,
 				ECC5AA802C9646D900A918FE /* CardsView.swift in Sources */,
+				ECC5AAB92C96E5B200A918FE /* ChatBubble.swift in Sources */,
 				ECC5AA7E2C9646B000A918FE /* HomeView.swift in Sources */,
 				ECC5AA7C2C96442A00A918FE /* CustomTabBar.swift in Sources */,
+				ECC5AAB52C96E59000A918FE /* APIKey.swift in Sources */,
 				ECC5AAB02C96E1FE00A918FE /* ChatBotView.swift in Sources */,
+				ECC5AABD2C96E5D400A918FE /* LoadView.swift in Sources */,
+				ECC5AABB2C96E5C000A918FE /* ChatBubbleShape.swift in Sources */,
 				ECC5AA822C964A3D00A918FE /* ProfileView.swift in Sources */,
 				ECC5AA932C966F8300A918FE /* LoginView.swift in Sources */,
+				ECC5AAC12C96E61000A918FE /* OnboardingChatBotView.swift in Sources */,
 				ECC5AAAE2C96D05600A918FE /* CalculationView.swift in Sources */,
 				ECC5AA6E2C963DC900A918FE /* WiseCreditApp.swift in Sources */,
 			);
@@ -468,6 +508,14 @@
 				minimumVersion = 11.2.0;
 			};
 		};
+		ECC5AAC22C96E68400A918FE /* XCRemoteSwiftPackageReference "generative-ai-swift" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/google-gemini/generative-ai-swift";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 0.5.6;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -505,6 +553,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = ECC5AA982C967E5900A918FE /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		ECC5AAC32C96E68400A918FE /* GoogleGenerativeAI */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = ECC5AAC22C96E68400A918FE /* XCRemoteSwiftPackageReference "generative-ai-swift" */;
+			productName = GoogleGenerativeAI;
 		};
 /* End XCSwiftPackageProductDependency section */
 	};
