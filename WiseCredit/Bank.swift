@@ -35,11 +35,11 @@ class BankViewModel: ObservableObject {
                     self.banks = snapshot.documents.compactMap { document in
                         try? document.data(as: Bank.self)
                     }
+                    // Ordenar los bancos por CAT de menor a mayor
+                    self.banks.sort { (Double($0.cat) ?? 0.0) < (Double($1.cat) ?? 0.0) }
                 }
             }
         }
-        // Ordenar los bancos por CAT de menor a mayor
-        self.banks.sort { (Double($0.cat) ?? 0.0) < (Double($1.cat) ?? 0.0) }
     }
 }
 
