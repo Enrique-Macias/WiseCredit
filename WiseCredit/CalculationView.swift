@@ -15,6 +15,32 @@ struct CalculationView: View {
     var selectedMonths: Int  // Meses seleccionados
     var score: Double  // Score ingresado por el usuario
 
+    // Propiedad computada para calcular el CAT y ordenar los bancos
+    var sortedBanks: [(bank: Bank, cat: Double, pagoMensual: Double, tasaInteresAjustada: Double, comisionApertura: Double)] {
+        let banksWithCAT = bankViewModel.banks.map { bank -> (bank: Bank, cat: Double, pagoMensual: Double, tasaInteresAjustada: Double, comisionApertura: Double) in
+            // Limpiar y convertir las tasas y comisiones
+            let tasaInteresBase = Double(bank.tasaInteres.replacingOccurrences(of: "%", with: "")) ?? 0.0
+            let comisionApertura = Double(bank.comisionApertura.replacingOccurrences(of: "%", with: "")) ?? 0.0
+            
+            // Calcular tasa de interés ajustada
+            let tasaInteresAjustada = ajustarTasaPorScore(tasaBase: tasaInteresBase, score: score)
+            
+            // Calcular pago mensual
+            let pagoMensual = calcularPagoMensual(monto: loanAmount, plazo: selectedMonths, tasaInteres: tasaInteresAjustada)
+            
+            // Crear array de pagos
+            let pagos = Array(repeating: pagoMensual, count: selectedMonths)
+            
+            // Calcular CAT
+            let cat = calcularCAT(monto: loanAmount, plazo: selectedMonths, pagos: pagos, comisionApertura: comisionApertura)
+            
+            return (bank: bank, cat: cat, pagoMensual: pagoMensual, tasaInteresAjustada: tasaInteresAjustada, comisionApertura: comisionApertura)
+        }
+        // Ordenar los bancos por CAT de menor a mayor
+        let sortedBanks = banksWithCAT.sorted { $0.cat < $1.cat }
+        return sortedBanks
+    }
+
     var body: some View {
         NavigationView {
             ZStack {
@@ -26,7 +52,13 @@ struct CalculationView: View {
                         Text("Cargando bancos...")
                     } else {
                         TabView {
-                            ForEach(bankViewModel.banks.prefix(5)) { bank in
+                            ForEach(sortedBanks.prefix(5), id: \.bank.id) { bankWithCAT in
+                                let bank = bankWithCAT.bank
+                                let cat = bankWithCAT.cat
+                                let pagoMensual = bankWithCAT.pagoMensual
+                                let tasaInteresAjustada = bankWithCAT.tasaInteresAjustada
+                                let comisionApertura = bankWithCAT.comisionApertura
+
                                 VStack(spacing: 20) {
                                     // Imagen del banco
                                     if let imageUrl = URL(string: bank.imageUrl) {
@@ -45,15 +77,7 @@ struct CalculationView: View {
                                         .font(CustomFonts.PoppinsSemiBold(size: 24))
                                         .foregroundColor(.black)
                                     
-                                    // Calcular valores
-                                    let tasaInteresBase = Double(bank.tasaInteres) ?? 0.0
-                                    let comisionApertura = Double(bank.comisionApertura) ?? 0.0
-                                    let tasaInteresAjustada = ajustarTasaPorScore(tasaBase: tasaInteresBase, score: score)
-                                    let pagoMensual = calcularPagoMensual(monto: loanAmount, plazo: selectedMonths, tasaInteres: tasaInteresAjustada)
-                                    let pagos = Array(repeating: pagoMensual, count: selectedMonths)
-                                    let cat = calcularCAT(monto: loanAmount, plazo: selectedMonths, pagos: pagos, comisionApertura: comisionApertura)
-                                    
-                                    // Mostrar información
+                                    // Mostrar información calculada
                                     VStack(spacing: 20) {
                                         Text("Monthly Payment")
                                             .font(CustomFonts.PoppinsMedium(size: 18))
@@ -61,7 +85,7 @@ struct CalculationView: View {
                                         Text("$\(String(format: "%.2f", pagoMensual))")
                                             .font(CustomFonts.PoppinsSemiBold(size: 36))
                                             .foregroundColor(.black)
-                                        Text("Comisión apertura: \(comisionApertura)%")
+                                        Text("Comisión apertura: \(String(format: "%.2f", comisionApertura))%")
                                             .font(CustomFonts.PoppinsMedium(size: 14))
                                             .foregroundColor(.gray)
                                         Text("Tasa de interés ajustada: \(String(format: "%.2f", tasaInteresAjustada))%")
@@ -120,7 +144,6 @@ struct CalculationView: View {
     }
 }
 
-
 struct CalculationView_Previews: PreviewProvider {
     static var previews: some View {
         CalculationView(
@@ -130,3 +153,4 @@ struct CalculationView_Previews: PreviewProvider {
         )
     }
 }
+
