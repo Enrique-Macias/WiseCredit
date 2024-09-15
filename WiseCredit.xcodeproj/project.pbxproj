@@ -11,6 +11,18 @@
 		ECC5AA702C963DC900A918FE /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AA6F2C963DC900A918FE /* ContentView.swift */; };
 		ECC5AA722C963DCD00A918FE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC5AA712C963DCD00A918FE /* Assets.xcassets */; };
 		ECC5AA752C963DCD00A918FE /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ECC5AA742C963DCD00A918FE /* Preview Assets.xcassets */; };
+		ECC5AA7C2C96442A00A918FE /* CustomTabBar.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AA7B2C96442900A918FE /* CustomTabBar.swift */; };
+		ECC5AA7E2C9646B000A918FE /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AA7D2C9646B000A918FE /* HomeView.swift */; };
+		ECC5AA802C9646D900A918FE /* CardsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AA7F2C9646D900A918FE /* CardsView.swift */; };
+		ECC5AA822C964A3D00A918FE /* ProfileView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AA812C964A3D00A918FE /* ProfileView.swift */; };
+		ECC5AA852C96597A00A918FE /* Poppins-Bold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECC5AA842C96597900A918FE /* Poppins-Bold.ttf */; };
+		ECC5AA8A2C96599600A918FE /* Poppins-ExtraBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECC5AA862C96599500A918FE /* Poppins-ExtraBold.ttf */; };
+		ECC5AA8B2C96599600A918FE /* Poppins-Regular.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECC5AA872C96599600A918FE /* Poppins-Regular.ttf */; };
+		ECC5AA8C2C96599600A918FE /* Poppins-SemiBold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECC5AA882C96599600A918FE /* Poppins-SemiBold.ttf */; };
+		ECC5AA8D2C96599600A918FE /* Poppins-Medium.ttf in Resources */ = {isa = PBXBuildFile; fileRef = ECC5AA892C96599600A918FE /* Poppins-Medium.ttf */; };
+		ECC5AA902C965A2000A918FE /* Fonts.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AA8F2C965A2000A918FE /* Fonts.swift */; };
+		ECC5AA932C966F8300A918FE /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AA922C966F8300A918FE /* LoginView.swift */; };
+		ECC5AA952C966FD900A918FE /* RegisterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AA942C966FD900A918FE /* RegisterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -19,6 +31,19 @@
 		ECC5AA6F2C963DC900A918FE /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		ECC5AA712C963DCD00A918FE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ECC5AA742C963DCD00A918FE /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		ECC5AA7B2C96442900A918FE /* CustomTabBar.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTabBar.swift; sourceTree = "<group>"; };
+		ECC5AA7D2C9646B000A918FE /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		ECC5AA7F2C9646D900A918FE /* CardsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CardsView.swift; sourceTree = "<group>"; };
+		ECC5AA812C964A3D00A918FE /* ProfileView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileView.swift; sourceTree = "<group>"; };
+		ECC5AA842C96597900A918FE /* Poppins-Bold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Bold.ttf"; sourceTree = "<group>"; };
+		ECC5AA862C96599500A918FE /* Poppins-ExtraBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-ExtraBold.ttf"; sourceTree = "<group>"; };
+		ECC5AA872C96599600A918FE /* Poppins-Regular.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Regular.ttf"; sourceTree = "<group>"; };
+		ECC5AA882C96599600A918FE /* Poppins-SemiBold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-SemiBold.ttf"; sourceTree = "<group>"; };
+		ECC5AA892C96599600A918FE /* Poppins-Medium.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Poppins-Medium.ttf"; sourceTree = "<group>"; };
+		ECC5AA8E2C9659B100A918FE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist; path = Info.plist; sourceTree = "<group>"; };
+		ECC5AA8F2C965A2000A918FE /* Fonts.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Fonts.swift; sourceTree = "<group>"; };
+		ECC5AA922C966F8300A918FE /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		ECC5AA942C966FD900A918FE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -51,8 +76,15 @@
 		ECC5AA6C2C963DC900A918FE /* WiseCredit */ = {
 			isa = PBXGroup;
 			children = (
+				ECC5AA8E2C9659B100A918FE /* Info.plist */,
 				ECC5AA6D2C963DC900A918FE /* WiseCreditApp.swift */,
+				ECC5AA832C96594900A918FE /* Fonts */,
 				ECC5AA6F2C963DC900A918FE /* ContentView.swift */,
+				ECC5AA812C964A3D00A918FE /* ProfileView.swift */,
+				ECC5AA7B2C96442900A918FE /* CustomTabBar.swift */,
+				ECC5AA912C966F6E00A918FE /* LoginViews */,
+				ECC5AA7D2C9646B000A918FE /* HomeView.swift */,
+				ECC5AA7F2C9646D900A918FE /* CardsView.swift */,
 				ECC5AA712C963DCD00A918FE /* Assets.xcassets */,
 				ECC5AA732C963DCD00A918FE /* Preview Content */,
 			);
@@ -65,6 +97,28 @@
 				ECC5AA742C963DCD00A918FE /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		ECC5AA832C96594900A918FE /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				ECC5AA842C96597900A918FE /* Poppins-Bold.ttf */,
+				ECC5AA862C96599500A918FE /* Poppins-ExtraBold.ttf */,
+				ECC5AA892C96599600A918FE /* Poppins-Medium.ttf */,
+				ECC5AA872C96599600A918FE /* Poppins-Regular.ttf */,
+				ECC5AA882C96599600A918FE /* Poppins-SemiBold.ttf */,
+				ECC5AA8F2C965A2000A918FE /* Fonts.swift */,
+			);
+			path = Fonts;
+			sourceTree = "<group>";
+		};
+		ECC5AA912C966F6E00A918FE /* LoginViews */ = {
+			isa = PBXGroup;
+			children = (
+				ECC5AA922C966F8300A918FE /* LoginView.swift */,
+				ECC5AA942C966FD900A918FE /* RegisterView.swift */,
+			);
+			path = LoginViews;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -125,8 +179,13 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECC5AA8A2C96599600A918FE /* Poppins-ExtraBold.ttf in Resources */,
+				ECC5AA8D2C96599600A918FE /* Poppins-Medium.ttf in Resources */,
 				ECC5AA752C963DCD00A918FE /* Preview Assets.xcassets in Resources */,
+				ECC5AA852C96597A00A918FE /* Poppins-Bold.ttf in Resources */,
+				ECC5AA8C2C96599600A918FE /* Poppins-SemiBold.ttf in Resources */,
 				ECC5AA722C963DCD00A918FE /* Assets.xcassets in Resources */,
+				ECC5AA8B2C96599600A918FE /* Poppins-Regular.ttf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -137,7 +196,14 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				ECC5AA952C966FD900A918FE /* RegisterView.swift in Sources */,
+				ECC5AA902C965A2000A918FE /* Fonts.swift in Sources */,
 				ECC5AA702C963DC900A918FE /* ContentView.swift in Sources */,
+				ECC5AA802C9646D900A918FE /* CardsView.swift in Sources */,
+				ECC5AA7E2C9646B000A918FE /* HomeView.swift in Sources */,
+				ECC5AA7C2C96442A00A918FE /* CustomTabBar.swift in Sources */,
+				ECC5AA822C964A3D00A918FE /* ProfileView.swift in Sources */,
+				ECC5AA932C966F8300A918FE /* LoginView.swift in Sources */,
 				ECC5AA6E2C963DC900A918FE /* WiseCreditApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -275,6 +341,7 @@
 				DEVELOPMENT_TEAM = 37A8UMU294;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WiseCredit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;
@@ -304,6 +371,7 @@
 				DEVELOPMENT_TEAM = 37A8UMU294;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = WiseCredit/Info.plist;
 				INFOPLIST_KEY_UIApplicationSceneManifest_Generation = YES;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchScreen_Generation = YES;

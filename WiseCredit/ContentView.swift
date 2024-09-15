@@ -8,17 +8,28 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var selectedTab: Tab = .home
+    
     var body: some View {
-        VStack {
-            Image(systemName: "doc.fill")
-                .imageScale(.large)
-                .foregroundStyle(.tint)
-            Text("Hello, world! Kike")
+        ZStack(alignment: .bottom) {
+            Group {
+                switch selectedTab {
+                case .home:
+                    HomeView()
+                case .stats:
+                    CardsView()  // Aquí la vista de Cards
+                case .profile:
+                    ProfileView()
+                }
+            }
+            .frame(maxWidth: .infinity, maxHeight: .infinity)
+            CustomTabBar(selectedTab: $selectedTab)
         }
-        .padding()
     }
 }
 
-#Preview {
-    ContentView()
+struct ContentView_Previews: PreviewProvider {
+    static var previews: some View {
+        ContentView()
+    }
 }
