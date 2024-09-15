@@ -9,7 +9,9 @@ import Charts
 import SwiftUI
 
 struct HomeView: View {
-    @EnvironmentObject var authViewModel: AuthViewModel // Usamos el viewModel para obtener el nombre
+    @EnvironmentObject var authViewModel: AuthViewModel
+    @State private var isNotificationsPresented = false
+
     @State private var notificationCount: Int = 2  // Número de notificaciones
     @State private var balance: Double = 13553.00  // Ejemplo de balance
     @State private var transactionHistory: [Transaction] = [
@@ -110,7 +112,7 @@ struct HomeView: View {
                                 VStack(spacing: 16) {
                                     BonusBoxButton(
                                         title: "Talk to a Chatbot",
-                                        icon: "robot",
+                                        icon: "BOT-Logo",
                                         isRed: true,
                                         action: {
                                             print("TAPPED CHTBOT BTN")
@@ -176,6 +178,7 @@ struct HomeView: View {
                     ZStack {
                         Button(action: {
                             print("Notificaciones presionadas")
+                            isNotificationsPresented = true
                         }) {
                             Image(systemName: "bell")
                                 .font(.system(size: 20))
@@ -191,6 +194,10 @@ struct HomeView: View {
                         }
                     }
                 }
+            }
+            .sheet(isPresented: $isNotificationsPresented) {
+                NotificationsView()
+                    .presentationDetents([.fraction(0.6)])
             }
         }
     }
@@ -243,7 +250,7 @@ struct BonusBoxButton: View {
         Button(action: action) {
             
             VStack(alignment: .leading, spacing: 8) {
-                Image(systemName: "robot.fill")
+                Image(systemName: "BOT-Logo")
                     .font(.title2)
                     .foregroundColor(isRed ? .white : .gray)
                 Image(systemName: icon)

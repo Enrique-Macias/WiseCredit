@@ -25,7 +25,7 @@ struct ChatBubble<Content>: View where Content: View {
             
             if direction == .left {
                 // Bot Icon para el bubble del bot
-                Image("BOT-logoO")
+                Image("BOT-logo")
                     .resizable()
                     .frame(width: 28, height: 28)
                     .padding(.trailing, 5)

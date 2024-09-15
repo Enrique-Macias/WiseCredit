@@ -15,7 +15,7 @@ struct LoadView: View {
         ZStack {
             Color(colorScheme == .light ? Color.black : .white)
                 .edgesIgnoringSafeArea(.all)
-            Image("robot")
+            Image("BOT-logo")
                 .foregroundColor(Color(colorScheme == .light ? .white : Color.white))
                 .frame(width: 10, height: 10)
                 .padding(.all, 20)

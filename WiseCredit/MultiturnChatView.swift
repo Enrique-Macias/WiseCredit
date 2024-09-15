@@ -39,7 +39,7 @@ struct MultiturnChatView: View {
                                 Button(action: {
                                     // Acción para la primera pregunta
                                 }) {
-                                    Text("¿Cómo se cuál es mi procedimiento legal?")
+                                    Text("¿Qué es Wise Credit?")
                                         .font(CustomFonts.PoppinsMedium(size: 14))
                                         .frame(maxWidth: .infinity, maxHeight: 15)
                                         .padding()
@@ -55,7 +55,7 @@ struct MultiturnChatView: View {
                                 Button(action: {
                                     // Acción para la segunda pregunta
                                 }) {
-                                    Text("¿Que papelería debo tener a la mano?")
+                                    Text("¿Que tipos de créditos ofrecen los bancos?")
                                         .font(CustomFonts.PoppinsMedium(size: 14))
                                         .frame(maxWidth: .infinity, maxHeight: 15)
                                         .padding()
@@ -71,7 +71,7 @@ struct MultiturnChatView: View {
                                 Button(action: {
                                     // Acción para la tercera pregunta
                                 }) {
-                                    Text("¿Cómo se cuál procedimiento tomar?")
+                                    Text("¿Cómo puedo mejorar mi historial crediticio?")
                                         .font(CustomFonts.PoppinsMedium(size: 14))
                                         .frame(maxWidth: .infinity, maxHeight: 15)
                                         .padding()
@@ -147,6 +147,9 @@ struct MultiturnChatView: View {
                 )
                 .padding(.horizontal, 16)
                 .padding(.bottom, 10)
+            }
+            .onTapGesture {
+                UIApplication.shared.endEditing()
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {

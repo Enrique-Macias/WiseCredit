@@ -24,6 +24,10 @@ struct CreditSimulationView: View {
                 // Color de fondo para toda la pantalla
                 Color("BackgroundColor")
                     .edgesIgnoringSafeArea(.all)
+                    .onTapGesture {
+                        // Ocultar teclado al hacer tap en cualquier parte de la pantalla
+                        UIApplication.shared.endEditing()
+                    }
                 
                 VStack(spacing: 20) {
                     // Tarjeta de crédito

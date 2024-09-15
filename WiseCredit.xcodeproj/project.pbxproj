@@ -46,6 +46,7 @@
 		ECC5AAC62C96F75700A918FE /* GenerativeAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECC5AAC52C96F75700A918FE /* GenerativeAI-Info.plist */; };
 		ECC5AAC82C9705A100A918FE /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAC72C9705A100A918FE /* Bank.swift */; };
 		ECC5AACA2C97159F00A918FE /* AddNewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAC92C97159F00A918FE /* AddNewCardView.swift */; };
+		ECC5AACC2C971F5B00A918FE /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AACB2C971F5A00A918FE /* NotificationsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -82,6 +83,7 @@
 		ECC5AAC52C96F75700A918FE /* GenerativeAI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GenerativeAI-Info.plist"; sourceTree = "<group>"; };
 		ECC5AAC72C9705A100A918FE /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		ECC5AAC92C97159F00A918FE /* AddNewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCardView.swift; sourceTree = "<group>"; };
+		ECC5AACB2C971F5A00A918FE /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -135,6 +137,7 @@
 				ECC5AAB42C96E58F00A918FE /* APIKey.swift */,
 				ECC5AAB62C96E59F00A918FE /* ChatBot.swift */,
 				ECC5AAB82C96E5B200A918FE /* ChatBubble.swift */,
+				ECC5AACB2C971F5A00A918FE /* NotificationsView.swift */,
 				ECC5AABA2C96E5C000A918FE /* ChatBubbleShape.swift */,
 				ECC5AABC2C96E5D400A918FE /* LoadView.swift */,
 				ECC5AABE2C96E5F100A918FE /* MultiturnChatView.swift */,
@@ -288,6 +291,7 @@
 				ECC5AA7C2C96442A00A918FE /* CustomTabBar.swift in Sources */,
 				ECC5AAB52C96E59000A918FE /* APIKey.swift in Sources */,
 				ECC5AAB02C96E1FE00A918FE /* ChatBotView.swift in Sources */,
+				ECC5AACC2C971F5B00A918FE /* NotificationsView.swift in Sources */,
 				ECC5AABD2C96E5D400A918FE /* LoadView.swift in Sources */,
 				ECC5AABB2C96E5C000A918FE /* ChatBubbleShape.swift in Sources */,
 				ECC5AA822C964A3D00A918FE /* ProfileView.swift in Sources */,

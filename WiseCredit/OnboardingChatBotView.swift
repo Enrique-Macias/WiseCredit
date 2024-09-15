@@ -21,27 +21,17 @@ struct OnboardingChatBotView: View {
                 // Título principal
                 Text("Asistente Financiero")
                     .font(.system(size: 24, weight: .black))
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                     .frame(width: 410, height: 31)
                     .padding()
 
                 // Subtítulo
                 Text("Acude a nuestro chat de asesoría para resolver dudas sobre procesos financieros")
                     .font(.system(size: 16))
-                    .foregroundColor(.white)
+                    .foregroundColor(.black)
                     .multilineTextAlignment(.center)
                     .padding(.horizontal, 40)
                     .padding(.top, 8)
-
-                Spacer()
-
-                // Imagen del Chatbot
-                Image("Onboarding-ChatBot")
-                    .resizable()
-                    .scaledToFit()
-                    .frame(height: 300)
-                    .foregroundStyle(Color.black)
-                    .padding(.bottom, 40)
                 
                 Spacer()
 
@@ -51,12 +41,12 @@ struct OnboardingChatBotView: View {
                         Text("Continuar")
                             .fontWeight(.bold)
                             .font(.system(size: 18))
-                            .foregroundColor(Color("BackgroundColor"))
+                            .foregroundColor(Color(.black))
                         HStack {
                             Spacer()
                             Image(systemName: "arrow.right")
                                 .font(.system(size: 18))
-                                .foregroundStyle(Color("BackgroundColor"))
+                                .foregroundStyle(Color(.black))
                         }
                         .padding(.trailing, 16)
                     }

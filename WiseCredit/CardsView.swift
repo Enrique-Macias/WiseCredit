@@ -44,13 +44,14 @@ struct CardsView: View {
                             }) {
                                 ZStack {
                                     RoundedRectangle(cornerRadius: 16)
-                                        .fill(Color.white)
+                                        .fill(Color.red)
                                         .frame(width: 200, height: 130)
                                         .shadow(radius: 5)
 
                                     Text("+")
                                         .font(.system(size: 48, weight: .bold))
                                         .foregroundColor(.black)
+                                        
                                 }
                             }
                             .fullScreenCover(isPresented: $showAddNewCardView) {
@@ -110,15 +111,6 @@ struct CardsView: View {
             }
             .navigationBarTitleDisplayMode(.inline)
             .toolbar {
-                ToolbarItem(placement: .navigationBarLeading) {
-                    Button(action: {
-                        // Acción de dismiss o navegación hacia atrás
-                    }) {
-                        Image(systemName: "arrow.left")
-                            .font(.system(size: 20, weight: .bold))
-                            .foregroundColor(.primary)
-                    }
-                }
                 ToolbarItem(placement: .principal) {
                     Text("Services")
                         .font(CustomFonts.PoppinsMedium(size: 16))
@@ -143,23 +135,6 @@ struct ToggleSettingRow: View {
                 .labelsHidden()
         }
         .padding(.horizontal)
-    }
-}
-
-struct AddNewCardView: View {
-    @Environment(\.presentationMode) var presentationMode
-
-    var body: some View {
-        VStack {
-            Text("Add New Card View")
-                .font(CustomFonts.PoppinsBold(size: 24))
-
-            Button("Dismiss") {
-                presentationMode.wrappedValue.dismiss()
-            }
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color("BackgroundColor"))
     }
 }
 
