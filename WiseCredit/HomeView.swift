@@ -5,8 +5,8 @@
 //  Created by Enrique Macias on 9/14/24.
 //
 
-import SwiftUI
 import Charts
+import SwiftUI
 
 struct HomeView: View {
     @EnvironmentObject var authViewModel: AuthViewModel // Usamos el viewModel para obtener el nombre
@@ -16,8 +16,9 @@ struct HomeView: View {
         Transaction(category: "Food", amount: -40.99, type: .payment),
         Transaction(category: "AI-Bank", amount: 460.00, type: .deposit)
     ]
-    @State private var selectedTimeRange: TimeRange = .oneDay // Valor por defecto para el rango de tiempo seleccionado
+    @State private var selectedTimeRange: TimeRange = .oneYear // Valor por defecto para el rango de tiempo seleccionado
     @State private var isCreditSimulatorPresented = false  // Estado para mostrar la CreditSimulationView
+    @State private var isChatBotPresented = false  // Estado para mostrar ChatBotView
 
     var body: some View {
         NavigationView {
@@ -30,7 +31,6 @@ struct HomeView: View {
                     // Divider debajo del texto de bienvenida y el botón de notificaciones
                     Divider()  // Color del divider
                         .padding(.top, -0.2)
-                    // Ajuste para acercar el divider al toolbar
                     Spacer()
                 }
                 
@@ -96,10 +96,28 @@ struct HomeView: View {
                                     CreditSimulationView()
                                 }
                                 
-                                // Right: Two bonus boxes
+                                // Right: Two bonus boxes turned into buttons
                                 VStack(spacing: 16) {
-                                    BonusBoxView(bonusAmount: "$22.42", isRed: true)
-                                    BonusBoxView(bonusAmount: "$122.00", isRed: false)
+                                    BonusBoxButton(
+                                        title: "Talk to a Chatbot",
+                                        icon: "robot",
+                                        isRed: true,
+                                        action: {
+                                            isChatBotPresented = true
+                                        }
+                                    )
+                                    .fullScreenCover(isPresented: $isChatBotPresented) {
+                                        ChatBotView()
+                                    }
+                                    
+                                    BonusBoxButton(
+                                        title: "Bonus received",
+                                        icon: "cube.box.fill",
+                                        isRed: false,
+                                        action: {
+                                            // Acción para la segunda caja, si es necesario
+                                        }
+                                    )
                                 }
                                 .frame(maxHeight: 260)  // Asegurar que la altura de los dos cuadros sea la misma que el rectángulo
                             }
@@ -161,6 +179,36 @@ struct HomeView: View {
                     }
                 }
             }
+        }
+    }
+}
+
+// BonusBoxButton es una estructura reutilizable para crear botones con el estilo de las BonusBoxView.
+struct BonusBoxButton: View {
+    var title: String
+    var icon: String
+    var isRed: Bool
+    var action: () -> Void
+    
+    var body: some View {
+        Button(action: action) {
+            
+            VStack(alignment: .leading, spacing: 8) {
+                Image(systemName: "robot.fill")
+                    .font(.title2)
+                    .foregroundColor(isRed ? .white : .gray)
+                Image(systemName: icon)
+                    .font(.title2)
+                    .foregroundColor(isRed ? .white : .gray)
+                
+                Text(title)
+                    .font(CustomFonts.PoppinsSemiBold(size: 16))
+                    .foregroundColor(isRed ? .white : .gray)
+            }
+            .padding(.leading, 8)  // Agregar un pequeño padding a la izquierda
+            .frame(maxWidth: .infinity, minHeight: 120, alignment: .leading)
+            .background(isRed ? Color.red : Color.black)
+            .cornerRadius(20)
         }
     }
 }

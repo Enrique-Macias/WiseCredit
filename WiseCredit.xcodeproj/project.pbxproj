@@ -34,6 +34,7 @@
 		ECC5AAAA2C96A6AC00A918FE /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAA92C96A6AB00A918FE /* AuthViewModel.swift */; };
 		ECC5AAAC2C96C7D000A918FE /* CreditSimulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAAB2C96C7D000A918FE /* CreditSimulationView.swift */; };
 		ECC5AAAE2C96D05600A918FE /* CalculationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAAD2C96D05600A918FE /* CalculationView.swift */; };
+		ECC5AAB02C96E1FE00A918FE /* ChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAAF2C96E1FE00A918FE /* ChatBotView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -59,6 +60,7 @@
 		ECC5AAA92C96A6AB00A918FE /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
 		ECC5AAAB2C96C7D000A918FE /* CreditSimulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditSimulationView.swift; sourceTree = "<group>"; };
 		ECC5AAAD2C96D05600A918FE /* CalculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationView.swift; sourceTree = "<group>"; };
+		ECC5AAAF2C96E1FE00A918FE /* ChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChatBotView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				ECC5AAAD2C96D05600A918FE /* CalculationView.swift */,
 				ECC5AA912C966F6E00A918FE /* LoginViews */,
 				ECC5AA7D2C9646B000A918FE /* HomeView.swift */,
+				ECC5AAAF2C96E1FE00A918FE /* ChatBotView.swift */,
 				ECC5AA7F2C9646D900A918FE /* CardsView.swift */,
 				ECC5AA712C963DCD00A918FE /* Assets.xcassets */,
 				ECC5AA962C967CDD00A918FE /* GoogleService-Info.plist */,
@@ -243,6 +246,7 @@
 				ECC5AA802C9646D900A918FE /* CardsView.swift in Sources */,
 				ECC5AA7E2C9646B000A918FE /* HomeView.swift in Sources */,
 				ECC5AA7C2C96442A00A918FE /* CustomTabBar.swift in Sources */,
+				ECC5AAB02C96E1FE00A918FE /* ChatBotView.swift in Sources */,
 				ECC5AA822C964A3D00A918FE /* ProfileView.swift in Sources */,
 				ECC5AA932C966F8300A918FE /* LoginView.swift in Sources */,
 				ECC5AAAE2C96D05600A918FE /* CalculationView.swift in Sources */,
