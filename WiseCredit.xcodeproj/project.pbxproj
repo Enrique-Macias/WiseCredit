@@ -32,6 +32,8 @@
 		ECC5AAA62C96813F00A918FE /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = ECC5AAA52C96813F00A918FE /* FirebaseAuthCombine-Community */; };
 		ECC5AAA82C96813F00A918FE /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = ECC5AAA72C96813F00A918FE /* FirebaseStorageCombine-Community */; };
 		ECC5AAAA2C96A6AC00A918FE /* AuthViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAA92C96A6AB00A918FE /* AuthViewModel.swift */; };
+		ECC5AAAC2C96C7D000A918FE /* CreditSimulationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAAB2C96C7D000A918FE /* CreditSimulationView.swift */; };
+		ECC5AAAE2C96D05600A918FE /* CalculationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAAD2C96D05600A918FE /* CalculationView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -55,6 +57,8 @@
 		ECC5AA942C966FD900A918FE /* RegisterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterView.swift; sourceTree = "<group>"; };
 		ECC5AA962C967CDD00A918FE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = SOURCE_ROOT; };
 		ECC5AAA92C96A6AB00A918FE /* AuthViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthViewModel.swift; sourceTree = "<group>"; };
+		ECC5AAAB2C96C7D000A918FE /* CreditSimulationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreditSimulationView.swift; sourceTree = "<group>"; };
+		ECC5AAAD2C96D05600A918FE /* CalculationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CalculationView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -100,7 +104,9 @@
 				ECC5AA6F2C963DC900A918FE /* ContentView.swift */,
 				ECC5AA812C964A3D00A918FE /* ProfileView.swift */,
 				ECC5AAA92C96A6AB00A918FE /* AuthViewModel.swift */,
+				ECC5AAAB2C96C7D000A918FE /* CreditSimulationView.swift */,
 				ECC5AA7B2C96442900A918FE /* CustomTabBar.swift */,
+				ECC5AAAD2C96D05600A918FE /* CalculationView.swift */,
 				ECC5AA912C966F6E00A918FE /* LoginViews */,
 				ECC5AA7D2C9646B000A918FE /* HomeView.swift */,
 				ECC5AA7F2C9646D900A918FE /* CardsView.swift */,
@@ -230,6 +236,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ECC5AAAA2C96A6AC00A918FE /* AuthViewModel.swift in Sources */,
+				ECC5AAAC2C96C7D000A918FE /* CreditSimulationView.swift in Sources */,
 				ECC5AA952C966FD900A918FE /* RegisterView.swift in Sources */,
 				ECC5AA902C965A2000A918FE /* Fonts.swift in Sources */,
 				ECC5AA702C963DC900A918FE /* ContentView.swift in Sources */,
@@ -238,6 +245,7 @@
 				ECC5AA7C2C96442A00A918FE /* CustomTabBar.swift in Sources */,
 				ECC5AA822C964A3D00A918FE /* ProfileView.swift in Sources */,
 				ECC5AA932C966F8300A918FE /* LoginView.swift in Sources */,
+				ECC5AAAE2C96D05600A918FE /* CalculationView.swift in Sources */,
 				ECC5AA6E2C963DC900A918FE /* WiseCreditApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

@@ -66,10 +66,10 @@ struct TabButton: View {
                         .transition(.opacity)
                 }
             }
-            .foregroundColor(selectedTab == tab ? .white : .gray)
+            .foregroundColor(selectedTab == tab ? .black : .gray)
             .padding(.vertical, 10)
             .padding(.horizontal, selectedTab == tab ? 20 : 10)
-            .background(selectedTab == tab ? Color.gray : Color.clear)
+            .background(selectedTab == tab ? Color("BackgroundColor") : Color.clear)
             .cornerRadius(20)
             .animation(.easeInOut, value: selectedTab) // Smooth animation
         }

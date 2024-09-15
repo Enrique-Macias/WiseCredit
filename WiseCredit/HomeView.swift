@@ -17,6 +17,7 @@ struct HomeView: View {
         Transaction(category: "AI-Bank", amount: 460.00, type: .deposit)
     ]
     @State private var selectedTimeRange: TimeRange = .oneDay // Valor por defecto para el rango de tiempo seleccionado
+    @State private var isCreditSimulatorPresented = false  // Estado para mostrar la CreditSimulationView
 
     var body: some View {
         NavigationView {
@@ -71,25 +72,28 @@ struct HomeView: View {
                                 .padding(.horizontal)
                             
                             HStack(spacing: 16) {
-                                // Left: Progress Circle Section (rectángulo vertical)
-                                ZStack {
-                                    VStack(spacing: 16) {
-                                        CircularProgressView(progress: 0.31)  // 31% Progress
-                                            .frame(width: 120, height: 120)
-                                        
-                                        Text("Tokens To Buy\nFor 33%")
-                                            .multilineTextAlignment(.center)
-                                            .font(CustomFonts.PoppinsMedium(size: 14))
-                                            .foregroundColor(.gray)
-                                        
-                                        Text("8990TB")
-                                            .font(CustomFonts.PoppinsSemiBold(size: 20))
-                                            .foregroundColor(.red)
+                                // Left: Credit Simulator Button (rectángulo vertical convertido en botón)
+                                Button(action: {
+                                    isCreditSimulatorPresented = true  // Navegar a CreditSimulationView
+                                }) {
+                                    ZStack {
+                                        VStack(spacing: 16) {
+                                            Image(systemName: "arrow.right")
+                                                .font(.system(size: 24, weight: .bold))
+                                                .foregroundColor(.white)
+                                            
+                                            Text("Credit Simulator")
+                                                .font(CustomFonts.PoppinsSemiBold(size: 16))
+                                                .foregroundColor(.white)
+                                        }
+                                        .padding()
+                                        .frame(height: 260)  // Ajustamos la altura del rectángulo vertical
+                                        .background(Color.black)
+                                        .cornerRadius(20)
                                     }
-                                    .padding()
-                                    .frame(height: 260)  // Ajustamos la altura del rectángulo vertical
-                                    .background(Color.black)
-                                    .cornerRadius(20)
+                                }
+                                .fullScreenCover(isPresented: $isCreditSimulatorPresented) {
+                                    CreditSimulationView()
                                 }
                                 
                                 // Right: Two bonus boxes
