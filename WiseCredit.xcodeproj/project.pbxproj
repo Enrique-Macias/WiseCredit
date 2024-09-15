@@ -44,6 +44,7 @@
 		ECC5AAC12C96E61000A918FE /* OnboardingChatBotView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAC02C96E61000A918FE /* OnboardingChatBotView.swift */; };
 		ECC5AAC42C96E68400A918FE /* GoogleGenerativeAI in Frameworks */ = {isa = PBXBuildFile; productRef = ECC5AAC32C96E68400A918FE /* GoogleGenerativeAI */; };
 		ECC5AAC62C96F75700A918FE /* GenerativeAI-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = ECC5AAC52C96F75700A918FE /* GenerativeAI-Info.plist */; };
+		ECC5AAC82C9705A100A918FE /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAC72C9705A100A918FE /* Bank.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -78,6 +79,7 @@
 		ECC5AABE2C96E5F100A918FE /* MultiturnChatView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = MultiturnChatView.swift; path = WiseCredit/MultiturnChatView.swift; sourceTree = SOURCE_ROOT; };
 		ECC5AAC02C96E61000A918FE /* OnboardingChatBotView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; name = OnboardingChatBotView.swift; path = WiseCredit/OnboardingChatBotView.swift; sourceTree = SOURCE_ROOT; };
 		ECC5AAC52C96F75700A918FE /* GenerativeAI-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = "GenerativeAI-Info.plist"; sourceTree = "<group>"; };
+		ECC5AAC72C9705A100A918FE /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -123,6 +125,7 @@
 				ECC5AA832C96594900A918FE /* Fonts */,
 				ECC5AA6F2C963DC900A918FE /* ContentView.swift */,
 				ECC5AA812C964A3D00A918FE /* ProfileView.swift */,
+				ECC5AAC72C9705A100A918FE /* Bank.swift */,
 				ECC5AAA92C96A6AB00A918FE /* AuthViewModel.swift */,
 				ECC5AAC52C96F75700A918FE /* GenerativeAI-Info.plist */,
 				ECC5AAAB2C96C7D000A918FE /* CreditSimulationView.swift */,
@@ -273,6 +276,7 @@
 				ECC5AA952C966FD900A918FE /* RegisterView.swift in Sources */,
 				ECC5AA902C965A2000A918FE /* Fonts.swift in Sources */,
 				ECC5AA702C963DC900A918FE /* ContentView.swift in Sources */,
+				ECC5AAC82C9705A100A918FE /* Bank.swift in Sources */,
 				ECC5AAB72C96E5A000A918FE /* ChatBot.swift in Sources */,
 				ECC5AA802C9646D900A918FE /* CardsView.swift in Sources */,
 				ECC5AAB92C96E5B200A918FE /* ChatBubble.swift in Sources */,

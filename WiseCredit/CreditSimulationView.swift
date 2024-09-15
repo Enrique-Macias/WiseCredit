@@ -14,7 +14,8 @@ struct CreditSimulationView: View {
     @State private var selectedMonths: String = "6 months"  // Opción seleccionada en el dropdown
     @State private var showDropdown = false  // Para mostrar u ocultar el menú desplegable
     @State private var showCalculationView = false  // Controla la presentación de CalculationView
-    
+    @State private var score: Double = 300  // Estado para controlar el score
+
     let monthsOptions = ["6 months", "12 months", "18 months", "24 months", "36 months"]
     
     var body: some View {
@@ -23,6 +24,7 @@ struct CreditSimulationView: View {
                 // Color de fondo para toda la pantalla
                 Color("BackgroundColor")
                     .edgesIgnoringSafeArea(.all)
+                
                 VStack(spacing: 20) {
                     // Tarjeta de crédito
                     Image("prestamo")
@@ -112,6 +114,28 @@ struct CreditSimulationView: View {
                     }
                     .padding(.horizontal)
                     
+                    // Score Section
+                    VStack(alignment: .leading, spacing: 8) {
+                        Text("Score")
+                            .font(CustomFonts.PoppinsSemiBold(size: 18))
+                            .foregroundColor(.black)
+                            .padding(.horizontal)
+                        
+                        // Barra deslizante de score
+                        HStack {
+                            Slider(value: $score, in: 300...850)
+                                .accentColor(scoreColor(for: score)) // Cambia el color de la barra
+                                .padding(.horizontal)
+                        }
+                        .padding(.horizontal)
+                        
+                        // Mostrar el valor del score actual
+                        Text("Score: \(Int(score))")
+                            .font(CustomFonts.PoppinsSemiBold(size: 16))
+                            .foregroundColor(.black)
+                            .padding(.horizontal)
+                    }
+                    
                     Spacer()
                     
                     // Botón de calcular
@@ -130,7 +154,7 @@ struct CreditSimulationView: View {
                     .padding(.horizontal)
                     .padding(.bottom, 20)
                     .fullScreenCover(isPresented: $showCalculationView) {
-                        CalculationView()  // Navegar a la vista CalculationView
+                        CalculationView(loanAmount: Double(loanAmount) ?? 0.0, selectedMonths: Int(selectedMonths.components(separatedBy: " ")[0]) ?? 6, score: score) 
                     }
                 }
                 .navigationBarTitleDisplayMode(.inline)
@@ -151,6 +175,17 @@ struct CreditSimulationView: View {
                     }
                 }
             }
+        }
+    }
+    
+    // Función para definir el color de la barra del score
+    func scoreColor(for value: Double) -> Color {
+        if value <= 500 {
+            return .red
+        } else if value <= 700 {
+            return .yellow
+        } else {
+            return .green
         }
     }
 }
