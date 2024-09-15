@@ -1,3 +1,4 @@
+
 //
 //  WiseCreditApp.swift
 //  WiseCredit
@@ -6,12 +7,25 @@
 //
 
 import SwiftUI
+import Firebase
 
 @main
 struct WiseCreditApp: App {
+    @StateObject var authViewModel = AuthViewModel() // Crear instancia del ViewModel
+    
+    init() {
+        FirebaseApp.configure() // Configurar Firebase
+    }
+    
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if authViewModel.isUserLoggedIn {
+                ContentView()
+                    .environmentObject(authViewModel) // Pasar el ViewModel al entorno
+            } else {
+                LoginView()
+                    .environmentObject(authViewModel) // Pasar el ViewModel al entorno
+            }
         }
     }
 }

@@ -8,8 +8,9 @@
 import SwiftUI
 
 struct ContentView: View {
+    @EnvironmentObject var authViewModel: AuthViewModel
     @State private var selectedTab: Tab = .home
-    
+
     var body: some View {
         ZStack(alignment: .bottom) {
             Group {
@@ -17,19 +18,21 @@ struct ContentView: View {
                 case .home:
                     HomeView()
                 case .stats:
-                    CardsView()  // Aquí la vista de Cards
+                    CardsView()
                 case .profile:
                     ProfileView()
                 }
             }
             .frame(maxWidth: .infinity, maxHeight: .infinity)
+
             CustomTabBar(selectedTab: $selectedTab)
         }
+        .navigationBarBackButtonHidden(true)
     }
 }
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        ContentView().environmentObject(AuthViewModel())
     }
 }

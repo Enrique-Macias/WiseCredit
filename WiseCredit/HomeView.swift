@@ -9,7 +9,7 @@ import SwiftUI
 import Charts
 
 struct HomeView: View {
-    var name: String = "Enrique"
+    @EnvironmentObject var authViewModel: AuthViewModel // Usamos el viewModel para obtener el nombre
     @State private var notificationCount: Int = 2  // Número de notificaciones
     @State private var balance: Double = 13553.00  // Ejemplo de balance
     @State private var transactionHistory: [Transaction] = [
@@ -17,13 +17,21 @@ struct HomeView: View {
         Transaction(category: "AI-Bank", amount: 460.00, type: .deposit)
     ]
     @State private var selectedTimeRange: TimeRange = .oneDay // Valor por defecto para el rango de tiempo seleccionado
-    
+
     var body: some View {
         NavigationView {
             ZStack {
                 // Color de fondo para toda la pantalla
                 Color("BackgroundColor")
                     .edgesIgnoringSafeArea(.all)
+                
+                VStack(spacing: 0) {
+                    // Divider debajo del texto de bienvenida y el botón de notificaciones
+                    Divider()  // Color del divider
+                        .padding(.top, -0.2)
+                    // Ajuste para acercar el divider al toolbar
+                    Spacer()
+                }
                 
                 ScrollView {
                     VStack(spacing: 16) {
@@ -49,7 +57,7 @@ struct HomeView: View {
                                 .frame(height: 200)
                                 .padding(.horizontal)
                                 .shadow(color: .gray.opacity(0.3), radius: 10, x: 0, y: 10)  // Agregar sombra
-
+                            
                             // Botones para seleccionar el rango de tiempo (1D, 5D, 1M, etc.)
                             TimeRangeButtons(selectedTimeRange: $selectedTimeRange)
                                 .padding(.horizontal)
@@ -61,7 +69,7 @@ struct HomeView: View {
                                 .font(CustomFonts.PoppinsSemiBold(size: 18))
                                 .foregroundColor(.black)
                                 .padding(.horizontal)
-
+                            
                             HStack(spacing: 16) {
                                 // Left: Progress Circle Section (rectángulo vertical)
                                 ZStack {
@@ -93,7 +101,7 @@ struct HomeView: View {
                             }
                             .padding(.horizontal)
                         }
-
+                        
                         // Transaction History Section
                         VStack(alignment: .leading) {
                             HStack {
@@ -121,7 +129,8 @@ struct HomeView: View {
                         Text("Welcome,")
                             .font(CustomFonts.PoppinsMedium(size: 16))
                             .foregroundColor(.gray)
-                        Text("\(name)!")
+                        // Mostrar el nombre del usuario desde AuthViewModel
+                        Text("\(authViewModel.userName)!")
                             .font(CustomFonts.PoppinsSemiBold(size: 16))
                             .foregroundColor(.black)
                     }
@@ -151,6 +160,8 @@ struct HomeView: View {
         }
     }
 }
+
+
 
 // Componente para el círculo de progreso
 struct CircularProgressView: View {
