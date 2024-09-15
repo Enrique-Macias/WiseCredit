@@ -7,23 +7,13 @@
 //
 
 import SwiftUI
+import FirebaseFirestore
+import Firebase
+
 
 struct NotificationsView: View {
-    let notificationsToday: [NotificationItem] = [
-        NotificationItem(username: "BBVA", action: "ha subido su CAT a 24%", time: "Just Now", icon: "arrow.up.circle.fill", iconColor: .red),
-        NotificationItem(username: "Santander", action: "ha bajado su tasa de interés a 10%", time: "2m", icon: "arrow.down.circle.fill", iconColor: .green),
-        NotificationItem(username: "Banorte", action: "ofrece 12 meses sin intereses", time: "5m", icon: "creditcard.fill", iconColor: .blue),
-        NotificationItem(username: "HSBC", action: "ha aprobado una compra por $500", time: "7h", icon: "checkmark.circle.fill", iconColor: .green),
-        NotificationItem(username: "Citibanamex", action: "ha añadido una nueva tarjeta", time: "22h", icon: "plus.circle.fill", iconColor: .blue)
-    ]
-
-    let notificationsOlder: [NotificationItem] = [
-        NotificationItem(username: "BBVA", action: "ha bajado su tasa de interés a 9.5%", time: "11:24 PM", icon: "arrow.down.circle.fill", iconColor: .green),
-        NotificationItem(username: "Santander", action: "ha aprobado una compra por $1200", time: "8:13 PM", icon: "checkmark.circle.fill", iconColor: .green),
-        NotificationItem(username: "Banorte", action: "ofrece 18 meses sin intereses", time: "8:10 PM", icon: "creditcard.fill", iconColor: .blue),
-        NotificationItem(username: "HSBC", action: "ha añadido una nueva tarjeta", time: "5:20 PM", icon: "plus.circle.fill", iconColor: .blue)
-    ]
-
+    @ObservedObject var viewModel = NotificationsViewModel()
+    
     var body: some View {
         VStack {
             HStack {
@@ -32,9 +22,10 @@ struct NotificationsView: View {
                     .padding()
                 
                 Spacer()
-
+                
                 Button(action: {
                     // Acción de limpiar notificaciones
+                    viewModel.clearNotifications()
                 }) {
                     Text("Clear")
                         .font(CustomFonts.PoppinsMedium(size: 16))
@@ -42,28 +33,21 @@ struct NotificationsView: View {
                         .padding()
                 }
             }
-
+            
             Divider()
-
+            
             ScrollView {
                 VStack(alignment: .leading) {
-                    Text("Today")
-                        .font(CustomFonts.PoppinsMedium(size: 14))
-                        .foregroundColor(.gray)
-                        .padding(.horizontal)
-
-                    ForEach(notificationsToday) { notification in
-                        NotificationRow(notification: notification)
-                    }
-
-                    Text("12 September 2019")
-                        .font(CustomFonts.PoppinsMedium(size: 14))
-                        .foregroundColor(.gray)
-                        .padding(.horizontal)
-                        .padding(.top, 10)
-
-                    ForEach(notificationsOlder) { notification in
-                        NotificationRow(notification: notification)
+                    ForEach(groupedNotifications.keys.sorted(by: >), id: \.self) { dateKey in
+                        Text(dateKey)
+                            .font(CustomFonts.PoppinsMedium(size: 14))
+                            .foregroundColor(.gray)
+                            .padding(.horizontal)
+                            .padding(.top, 10)
+                        
+                        ForEach(groupedNotifications[dateKey] ?? []) { notification in
+                            NotificationRow(notification: notification)
+                        }
                     }
                 }
             }
@@ -72,46 +56,84 @@ struct NotificationsView: View {
         .padding(.bottom, 20)
         .padding(.horizontal)
     }
-}
-
-struct NotificationItem: Identifiable {
-    let id = UUID()
-    let username: String
-    let action: String
-    let time: String
-    let icon: String
-    let iconColor: Color
-}
-
-struct NotificationRow: View {
-    let notification: NotificationItem
-
-    var body: some View {
-        HStack {
-            Image(systemName: notification.icon)
-                .font(.title2)
-                .foregroundColor(notification.iconColor)
-                .padding(.trailing, 8)
-            
-            VStack(alignment: .leading) {
-                Text(notification.username)
-                    .font(CustomFonts.PoppinsSemiBold(size: 16))
-                    .foregroundColor(.black) +
-                Text(" \(notification.action)")
-                    .font(CustomFonts.PoppinsMedium(size: 16))
-                    .foregroundColor(.black)
-                
-                Text(notification.time)
-                    .font(CustomFonts.PoppinsMedium(size: 14))
-                    .foregroundColor(.gray)
-            }
-            Spacer()
+    
+    // Agrupar notificaciones por fecha
+    private var groupedNotifications: [String: [NotificationItem]] {
+        Dictionary(grouping: viewModel.notifications) { notification in
+            let date = notification.timestamp.dateValue()
+            let dateFormatter = DateFormatter()
+            dateFormatter.dateStyle = .medium
+            return dateFormatter.string(from: date)
         }
-        .padding(.horizontal)
-        .padding(.vertical, 8)
+    }
+    struct NotificationRow: View {
+        let notification: NotificationItem
+        
+        var body: some View {
+            HStack {
+                Image(systemName: determineIcon(for: notification))
+                    .font(.title2)
+                    .foregroundColor(determineIconColor(for: notification))
+                    .padding(.trailing, 8)
+                
+                VStack(alignment: .leading) {
+                    (
+                        Text(notification.bankName)
+                            .font(CustomFonts.PoppinsSemiBold(size: 16))
+                            .foregroundColor(.black) +
+                        Text(" \(notification.message)")
+                            .font(CustomFonts.PoppinsMedium(size: 16))
+                            .foregroundColor(.black)
+                    )
+                    
+                    Text(formatTimestamp(notification.timestamp))
+                        .font(CustomFonts.PoppinsMedium(size: 14))
+                        .foregroundColor(.gray)
+                }
+                Spacer()
+            }
+            .padding(.horizontal)
+            .padding(.vertical, 8)
+        }
+        
+        func formatTimestamp(_ timestamp: Timestamp) -> String {
+            let date = timestamp.dateValue()
+            let formatter = RelativeDateTimeFormatter()
+            formatter.unitsStyle = .abbreviated
+            return formatter.localizedString(for: date, relativeTo: Date())
+        }
+        
+        func determineIcon(for notification: NotificationItem) -> String {
+            // Lógica para determinar el ícono basado en el contenido de la notificación
+            if let oldRate = notification.oldRate, let newRate = notification.newRate {
+                if newRate > oldRate {
+                    return "arrow.up.circle.fill"
+                } else if newRate < oldRate {
+                    return "arrow.down.circle.fill"
+                } else {
+                    return "circle.fill"
+                }
+            } else {
+                return "bell.fill"
+            }
+        }
+        
+        func determineIconColor(for notification: NotificationItem) -> Color {
+            // Lógica para determinar el color del ícono
+            if let oldRate = notification.oldRate, let newRate = notification.newRate {
+                if newRate > oldRate {
+                    return .red
+                } else if newRate < oldRate {
+                    return .green
+                } else {
+                    return .gray
+                }
+            } else {
+                return .blue
+            }
+        }
     }
 }
-
 
 #Preview {
     NotificationsView()

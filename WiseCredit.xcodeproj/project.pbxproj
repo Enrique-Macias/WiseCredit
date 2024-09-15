@@ -47,6 +47,8 @@
 		ECC5AAC82C9705A100A918FE /* Bank.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAC72C9705A100A918FE /* Bank.swift */; };
 		ECC5AACA2C97159F00A918FE /* AddNewCardView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAC92C97159F00A918FE /* AddNewCardView.swift */; };
 		ECC5AACC2C971F5B00A918FE /* NotificationsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AACB2C971F5A00A918FE /* NotificationsView.swift */; };
+		ECC5AAD02C972C3F00A918FE /* ActivityView.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AACF2C972C3F00A918FE /* ActivityView.swift */; };
+		ECC5AAD22C9732C500A918FE /* NotificationItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = ECC5AAD12C9732C400A918FE /* NotificationItem.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -84,6 +86,8 @@
 		ECC5AAC72C9705A100A918FE /* Bank.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Bank.swift; sourceTree = "<group>"; };
 		ECC5AAC92C97159F00A918FE /* AddNewCardView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewCardView.swift; sourceTree = "<group>"; };
 		ECC5AACB2C971F5A00A918FE /* NotificationsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationsView.swift; sourceTree = "<group>"; };
+		ECC5AACF2C972C3F00A918FE /* ActivityView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ActivityView.swift; sourceTree = "<group>"; };
+		ECC5AAD12C9732C400A918FE /* NotificationItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NotificationItem.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -129,6 +133,7 @@
 				ECC5AA832C96594900A918FE /* Fonts */,
 				ECC5AA6F2C963DC900A918FE /* ContentView.swift */,
 				ECC5AA812C964A3D00A918FE /* ProfileView.swift */,
+				ECC5AAD12C9732C400A918FE /* NotificationItem.swift */,
 				ECC5AAC92C97159F00A918FE /* AddNewCardView.swift */,
 				ECC5AAC72C9705A100A918FE /* Bank.swift */,
 				ECC5AAA92C96A6AB00A918FE /* AuthViewModel.swift */,
@@ -140,6 +145,7 @@
 				ECC5AACB2C971F5A00A918FE /* NotificationsView.swift */,
 				ECC5AABA2C96E5C000A918FE /* ChatBubbleShape.swift */,
 				ECC5AABC2C96E5D400A918FE /* LoadView.swift */,
+				ECC5AACF2C972C3F00A918FE /* ActivityView.swift */,
 				ECC5AABE2C96E5F100A918FE /* MultiturnChatView.swift */,
 				ECC5AAC02C96E61000A918FE /* OnboardingChatBotView.swift */,
 				ECC5AA7B2C96442900A918FE /* CustomTabBar.swift */,
@@ -278,9 +284,11 @@
 			files = (
 				ECC5AAAA2C96A6AC00A918FE /* AuthViewModel.swift in Sources */,
 				ECC5AACA2C97159F00A918FE /* AddNewCardView.swift in Sources */,
+				ECC5AAD22C9732C500A918FE /* NotificationItem.swift in Sources */,
 				ECC5AABF2C96E5F100A918FE /* MultiturnChatView.swift in Sources */,
 				ECC5AAAC2C96C7D000A918FE /* CreditSimulationView.swift in Sources */,
 				ECC5AA952C966FD900A918FE /* RegisterView.swift in Sources */,
+				ECC5AAD02C972C3F00A918FE /* ActivityView.swift in Sources */,
 				ECC5AA902C965A2000A918FE /* Fonts.swift in Sources */,
 				ECC5AA702C963DC900A918FE /* ContentView.swift in Sources */,
 				ECC5AAC82C9705A100A918FE /* Bank.swift in Sources */,
